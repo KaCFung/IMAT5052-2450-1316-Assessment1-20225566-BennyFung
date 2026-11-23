@@ -16,11 +16,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Dynamic Date & Time Subtitle Overlay (覆蓋底圖 12/11/2026 • 20:00 - 21:30) -->
+
     <!-- Back Button -->
-    <Button
-        android:id="@+id/btnBackRooms"
+
+    <TextView
+        android:id="@+id/tvRoomsHeaderDateTime"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical|start"
+        android:text="12/11/2026 • 10:00 - 10:30"
+        android:textColor="#64748B"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.025"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054"
+        app:layout_constraintWidth_percent="0.48" />
+
+    <Button
+        android:id="@+id/btnBackRooms"
+        android:layout_width="55dp"
+        android:layout_height="32dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,9 +52,7 @@
         app:layout_constraintVertical_bias="0.025"
         app:layout_constraintWidth_percent="0.20" />
 
-    <!-- Room Slot 1 (Meeting Room 1) -->
-
-    <!-- Room Slot 2 (Meeting Room 2 Reserved for Chris / Meeting Room 3 for Rex) -->
+    <!-- Room Slot 1 -->
     <Button
         android:id="@+id/btnSelectRoom1"
         android:layout_width="0dp"
@@ -47,8 +66,7 @@
         app:layout_constraintVertical_bias="0.126"
         app:layout_constraintWidth_percent="0.80" />
 
-    <!-- Room Slot 3 (Seminar Room A) -->
-
+    <!-- Room Slot 2 -->
     <Button
         android:id="@+id/btnSelectRoom2"
         android:layout_width="0dp"
@@ -62,6 +80,7 @@
         app:layout_constraintVertical_bias="0.331"
         app:layout_constraintWidth_percent="0.80" />
 
+    <!-- Room Slot 3 -->
     <Button
         android:id="@+id/btnSelectRoom3"
         android:layout_width="0dp"

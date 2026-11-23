@@ -3,7 +3,8 @@ package uk.ac.plymouth.comp2000hk.sharedofficebookingapp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
+//Data Manage center to sync user role/rooms/booking/other activities
+//ready default data for demo, so no need an external database.
 public class BookingDataManager {
     public static String currentUserRole = "EMPLOYEE";
     public static String currentUserName = "Rex";
@@ -24,7 +25,7 @@ public class BookingDataManager {
         bookingList.add(new Booking("Seminar Room B", "12/11/2026", "10:00 - 12:00", "Department Workshop", "Chris", "Confirmed"));
         bookingList.add(new Booking("Meeting Room 3", "13/11/2026", "11:00 - 11:30", "Sprint Review (Cancel Requested)", "Sarah (Employee)", "Cancel Requested"));
     }
-
+//timeslot control for different role.
     public static String[] getTimeOptions(boolean isManager) {
         List<String> times = new ArrayList<>();
         int startHour = isManager ? 0 : 9;

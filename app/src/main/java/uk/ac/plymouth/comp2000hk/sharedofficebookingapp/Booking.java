@@ -1,12 +1,13 @@
 package uk.ac.plymouth.comp2000hk.sharedofficebookingapp;
-
+// Data model representing a single room reservation record.
+// Fields as public for getters/setters updates in the prototype.
 public class Booking {
-    private String roomName;
-    private String date;
-    private String timeSlot;
-    private String purpose;
-    private String bookedFor;
-    private String status; //confirmed or cancelled)
+    public String roomName;
+    public String date;
+    public String timeSlot;
+    public String purpose;
+    public String bookedFor;
+    public String status; // confirmed or cancelled
 
     public Booking(String roomName, String date, String timeSlot, String purpose, String bookedFor, String status) {
         this.roomName = roomName;

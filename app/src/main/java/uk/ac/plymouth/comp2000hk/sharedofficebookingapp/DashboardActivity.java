@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+//control by role for different background layouts and time options to show different UI.
 public class DashboardActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +17,7 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        //switch dashboard based on active user role
         boolean isManager = BookingDataManager.currentUserRole.equals("MANAGER");
 
         ImageView ivBg = findViewById(R.id.ivBgDashboard);
@@ -32,9 +34,13 @@ public class DashboardActivity extends AppCompatActivity {
         spStart.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, times));
         spEnd.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, times));
 
-        if (times.length > 3) {
-            spStart.setSelection(2); // default 10:00
-            spEnd.setSelection(3);   // default 10:30
+        // default selection  09:00 - 18:00 for both roles
+        if (isManager) {
+            spStart.setSelection(18); // 09:00 in 24-hour list
+            spEnd.setSelection(36);   // 18:00 in 24-hour list
+        } else {
+            spStart.setSelection(0);  // 09:00 in office-hours list
+            spEnd.setSelection(times.length - 1); // 18:00 in office-hours list
         }
 
         Button btnFindRooms = findViewById(R.id.btnFindRooms);
@@ -54,7 +60,7 @@ public class DashboardActivity extends AppCompatActivity {
             intent.putExtra("TIMESLOT", selectedSlot);
             startActivity(intent);
         });
-
+//system-wide management view for Manager and personal bookings list for Employee.
         btnMyBookings.setOnClickListener(v -> {
             if (isManager) {
                 startActivity(new Intent(DashboardActivity.this, ManageRequestsActivity.class));
