@@ -1,5 +1,6 @@
 package uk.ac.plymouth.comp2000hk.sharedofficebookingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -7,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,19 +17,26 @@ public class MainActivity extends AppCompatActivity {
         EditText etUsername = findViewById(R.id.etUsername);
         Button btnLogin = findViewById(R.id.btnLogin);
 
-        // check user role on single login button click
         btnLogin.setOnClickListener(v -> {
-            String input = etUsername.getText().toString().trim().toLowerCase();
-            if (input.equals("chris")) {
-                BookingDataManager.currentUserRole = "MANAGER";
-                BookingDataManager.currentUserName = "Chris";
-                Toast.makeText(this, "Welcome Chris! Logged in as Manager", Toast.LENGTH_SHORT).show();
-            } else if (input.equals("rex") || input.isEmpty()) {
+            String inputUser = etUsername.getText().toString().trim().toLowerCase();
+
+            if (inputUser.isEmpty()) {
+                etUsername.setError("Please enter username (rex or chris)");
+                etUsername.requestFocus();
+                return;
+            }
+
+            if (inputUser.equals("rex")) {
                 BookingDataManager.currentUserRole = "EMPLOYEE";
                 BookingDataManager.currentUserName = "Rex";
-                Toast.makeText(this, "Welcome Rex! Logged in as Employee", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, DashboardActivity.class));
+            } else if (inputUser.equals("chris")) {
+                BookingDataManager.currentUserRole = "MANAGER";
+                BookingDataManager.currentUserName = "Chris";
+                startActivity(new Intent(MainActivity.this, DashboardActivity.class));
             } else {
-                Toast.makeText(this, "Invalid user (try 'Rex' or 'Chris')", Toast.LENGTH_SHORT).show();
+                etUsername.setError("Unknown user");
+                Toast.makeText(MainActivity.this, "Invalid username! Use 'rex' or 'chris'.", Toast.LENGTH_SHORT).show();
             }
         });
     }
