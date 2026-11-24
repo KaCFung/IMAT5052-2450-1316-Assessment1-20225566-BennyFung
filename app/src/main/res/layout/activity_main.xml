@@ -26,6 +26,7 @@
         android:background="@android:color/transparent"
         android:gravity="center_vertical"
         android:hint="User name"
+        android:text="Rex"
         android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"

@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Dynamic Date & Time Subtitle Overlay (覆蓋底圖 12/11/2026 • 20:00 - 21:30) -->
+    <!-- Date & Time Subtitle Overlay -->
 
     <!-- Back Button -->
 
