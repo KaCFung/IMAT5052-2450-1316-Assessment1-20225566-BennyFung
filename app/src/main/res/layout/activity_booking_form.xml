@@ -62,6 +62,7 @@
         android:background="#FFFFFF"
         android:gravity="center_vertical|start"
         android:hint="e.g. Project Discussion"
+        android:text="Discussion"
         android:inputType="text"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
