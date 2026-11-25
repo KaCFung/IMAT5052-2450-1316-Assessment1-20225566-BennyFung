@@ -3,52 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F6F9">
+    android:background="#E2E8F0">
 
-    <ImageView
-        android:id="@+id/ivBgFeedback"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/phoneViewportContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/feedbackdialog"
+        android:background="#F4F6F9"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W,9:19.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Receipt Card Overlay  -->
-    <TextView
-        android:id="@+id/tvFeedbackDetails"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#FFFFFF"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="6dp"
-        android:padding="10dp"
-        android:text="Room: Meeting Room 1\nDate: 12/11/2026\nTime: 10:00 - 10:30\nPurpose: Project Sync\nBooked By: Rex"
-        android:textColor="#0F172A"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.215"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46"
-        app:layout_constraintWidth_percent="0.62" />
+        <ImageView
+            android:id="@+id/ivBgFeedback"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/feedbackdialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- View My Bookings button -->
-    <Button
-        android:id="@+id/btnFeedbackViewBookings"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651"
-        app:layout_constraintWidth_percent="0.62" />
+        <!-- Receipt Card Overlay  -->
+        <TextView
+            android:id="@+id/tvFeedbackDetails"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="6dp"
+            android:padding="10dp"
+            android:text="Room: Meeting Room 1\nDate: 12/11/2026\nTime: 10:00 - 10:30\nPurpose: Project Sync\nBooked By: Rex"
+            android:textColor="#0F172A"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.215"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.46"
+            app:layout_constraintWidth_percent="0.62" />
+
+        <!-- View My Bookings button -->
+        <Button
+            android:id="@+id/btnFeedbackViewBookings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.651"
+            app:layout_constraintWidth_percent="0.62" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

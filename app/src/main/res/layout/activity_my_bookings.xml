@@ -4,49 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F6F9">
+    android:background="#E2E8F0">
 
-    <ImageView
-        android:id="@+id/ivBgMyBookings"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/mybookingrex"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Back Button -->
-    <Button
-        android:id="@+id/btnBackMyBookings"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.045"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025"
-        app:layout_constraintWidth_percent="0.20" />
-
-    <!-- Dynamic Bookings List Overlay -->
-    <!-- Dynamic Bookings List Overlay -->
-    <ListView
-        android:id="@+id/lvMyBookings"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/phoneViewportContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#F4F6F9"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W,9:19.5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.80"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41"
-        app:layout_constraintWidth_percent="0.80" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBgMyBookings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/mybookingrex"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/btnBackMyBookings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.045"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.025"
+            app:layout_constraintWidth_percent="0.20" />
+
+        <!-- Dynamic Bookings List Overlay -->
+        <ListView
+            android:id="@+id/lvMyBookings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#F4F6F9"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.80"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41"
+            app:layout_constraintWidth_percent="0.80" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
